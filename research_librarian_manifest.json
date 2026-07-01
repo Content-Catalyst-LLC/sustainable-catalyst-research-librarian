@@ -1,0 +1,32 @@
+{
+  "name": "Sustainable Catalyst Research Librarian",
+  "slug": "sustainable-catalyst-research-librarian",
+  "version": "0.1.0",
+  "shortcode": "[sustainable_catalyst_research_librarian]",
+  "type": "wordpress-plugin",
+  "status": "prototype",
+  "scope": "guided navigation assistant",
+  "routes": [
+    "Catalyst Canvas",
+    "Catalyst Data",
+    "Catalyst Analytics R",
+    "Global Impact Catalyst",
+    "Narrative Risk",
+    "Catalyst Finance",
+    "Catalyst Grit",
+    "Methodology",
+    "Knowledge Library",
+    "GitHub",
+    "Feature Suggestions",
+    "Consulting"
+  ],
+  "boundaries": [
+    "no legal advice",
+    "no financial or investment advice",
+    "no medical or mental health advice",
+    "no tax advice",
+    "no compliance certification",
+    "no ESG or SDG assurance",
+    "no professional advice"
+  ]
+}

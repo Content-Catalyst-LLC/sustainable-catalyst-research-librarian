@@ -1,0 +1,342 @@
+.scrl-agent {
+  --scrl-black: #000000;
+  --scrl-red: #9b1111;
+  --scrl-white: #ffffff;
+  --scrl-cream: #f7f3ea;
+  --scrl-cream-soft: #fbfaf6;
+  --scrl-border: #d9d2c4;
+  --scrl-text: #171717;
+  --scrl-muted: #555555;
+  --scrl-shadow: 0 10px 26px rgba(0, 0, 0, 0.045);
+  margin: 24px 0;
+  padding: 0;
+  color: var(--scrl-text);
+  background: var(--scrl-white);
+  border: 1px solid var(--scrl-border);
+  box-shadow: var(--scrl-shadow);
+}
+
+.scrl-agent,
+.scrl-agent * {
+  box-sizing: border-box;
+}
+
+.scrl-agent__header {
+  position: relative;
+  padding: 30px 30px 24px;
+  border-top: 7px solid var(--scrl-black);
+}
+
+.scrl-agent__header::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  top: 0;
+  height: 3px;
+  background: var(--scrl-red);
+}
+
+.scrl-agent__eyebrow {
+  margin: 0 0 10px;
+  color: var(--scrl-red);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.scrl-agent__header h2 {
+  margin: 0 0 12px;
+  color: var(--scrl-black);
+  font-size: clamp(1.7rem, 3vw, 2.55rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.scrl-agent__header p,
+.scrl-agent__boundary span,
+.scrl-agent__empty p,
+.scrl-agent__recommendation p,
+.scrl-agent__why p,
+.scrl-agent__next-list li,
+.scrl-agent__small {
+  color: var(--scrl-muted);
+  line-height: 1.65;
+}
+
+.scrl-agent__boundary {
+  display: flex;
+  gap: 8px;
+  margin: 0 30px 24px;
+  padding: 15px 16px;
+  background: var(--scrl-cream-soft);
+  border-left: 4px solid var(--scrl-red);
+  font-size: 0.94rem;
+}
+
+.scrl-agent__boundary strong {
+  color: var(--scrl-black);
+}
+
+.scrl-agent__layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 18px;
+  padding: 0 30px 30px;
+}
+
+.scrl-agent__controls,
+.scrl-agent__results {
+  padding: 22px;
+  border: 1px solid var(--scrl-border);
+  background: var(--scrl-cream-soft);
+}
+
+.scrl-agent__results {
+  background: var(--scrl-white);
+}
+
+.scrl-agent__label {
+  display: block;
+  margin: 0 0 8px;
+  color: var(--scrl-black);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.scrl-agent__select,
+.scrl-agent__textarea {
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 12px 13px;
+  border: 1px solid var(--scrl-border);
+  background: var(--scrl-white);
+  color: var(--scrl-text);
+  font: inherit;
+  line-height: 1.45;
+}
+
+.scrl-agent__textarea {
+  resize: vertical;
+}
+
+.scrl-agent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 2px 0 20px;
+}
+
+.scrl-agent__button,
+.scrl-agent__quick button,
+.scrl-agent__links a,
+.scrl-agent__footer a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 9px 12px;
+  background: var(--scrl-white);
+  border: 1px solid var(--scrl-black);
+  color: var(--scrl-black);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.055em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.scrl-agent__button:hover,
+.scrl-agent__quick button:hover,
+.scrl-agent__links a:hover,
+.scrl-agent__footer a:hover {
+  background: var(--scrl-black);
+  color: var(--scrl-white);
+}
+
+.scrl-agent__button--primary {
+  background: var(--scrl-black);
+  color: var(--scrl-white);
+}
+
+.scrl-agent__button--primary:hover {
+  background: var(--scrl-red);
+  border-color: var(--scrl-red);
+}
+
+.scrl-agent__quick {
+  padding-top: 14px;
+  border-top: 1px solid var(--scrl-border);
+}
+
+.scrl-agent__quick p {
+  margin: 0 0 10px;
+  color: var(--scrl-red);
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.scrl-agent__quick button {
+  min-height: 34px;
+  margin: 0 6px 8px 0;
+  padding: 7px 9px;
+  font-size: 0.68rem;
+}
+
+.scrl-agent__empty {
+  padding: 22px;
+  background: var(--scrl-cream-soft);
+  border: 1px dashed var(--scrl-border);
+}
+
+.scrl-agent__empty strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--scrl-black);
+}
+
+.scrl-agent__recommendation {
+  display: grid;
+  gap: 16px;
+}
+
+.scrl-agent__primary {
+  padding: 20px;
+  background: var(--scrl-cream-soft);
+  border: 1px solid var(--scrl-border);
+  border-top: 4px solid var(--scrl-red);
+}
+
+.scrl-agent__tag {
+  display: inline-block;
+  margin: 0 0 10px;
+  color: var(--scrl-red);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.scrl-agent__primary h3,
+.scrl-agent__why h4,
+.scrl-agent__next h4,
+.scrl-agent__secondary h4 {
+  margin: 0 0 10px;
+  color: var(--scrl-black);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+.scrl-agent__primary h3 {
+  font-size: 1.45rem;
+}
+
+.scrl-agent__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.scrl-agent__why,
+.scrl-agent__next,
+.scrl-agent__secondary,
+.scrl-agent__safety {
+  padding: 18px;
+  border: 1px solid var(--scrl-border);
+  background: var(--scrl-white);
+}
+
+.scrl-agent__next-list {
+  margin: 0;
+  padding-left: 19px;
+}
+
+.scrl-agent__secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.scrl-agent__mini {
+  padding: 14px;
+  background: var(--scrl-cream-soft);
+  border: 1px solid var(--scrl-border);
+}
+
+.scrl-agent__mini strong {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--scrl-black);
+}
+
+.scrl-agent__mini a {
+  color: var(--scrl-black);
+  font-weight: 900;
+}
+
+.scrl-agent__safety {
+  background: var(--scrl-black);
+  color: var(--scrl-white);
+}
+
+.scrl-agent__safety strong {
+  color: var(--scrl-white);
+}
+
+.scrl-agent__safety p {
+  margin: 8px 0 0;
+  color: #f0e9dc;
+  line-height: 1.6;
+}
+
+.scrl-agent__footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 22px 30px 30px;
+  border-top: 1px solid var(--scrl-border);
+}
+
+@media (max-width: 860px) {
+  .scrl-agent__layout {
+    grid-template-columns: 1fr;
+  }
+
+  .scrl-agent__secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .scrl-agent__header,
+  .scrl-agent__layout,
+  .scrl-agent__footer {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .scrl-agent__header::before {
+    left: 20px;
+    right: 20px;
+  }
+
+  .scrl-agent__boundary {
+    margin-left: 20px;
+    margin-right: 20px;
+    flex-direction: column;
+  }
+
+  .scrl-agent__controls,
+  .scrl-agent__results {
+    padding: 18px;
+  }
+}

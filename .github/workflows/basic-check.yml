@@ -1,0 +1,17 @@
+name: Basic Check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  file-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Confirm plugin file exists
+        run: test -f wordpress/sustainable-catalyst-research-librarian/sustainable-catalyst-research-librarian.php
+      - name: Confirm assets exist
+        run: |
+          test -f wordpress/sustainable-catalyst-research-librarian/assets/research-librarian.css
+          test -f wordpress/sustainable-catalyst-research-librarian/assets/research-librarian.js
