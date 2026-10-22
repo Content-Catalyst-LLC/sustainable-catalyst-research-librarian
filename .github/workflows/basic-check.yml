@@ -2,7 +2,14 @@ name: Basic Check
 
 on:
   push:
+    branches: [main]
+    tags: ["*"]
   pull_request:
+
+# A newer revision supersedes validation/artifacts for the same branch or PR.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   file-check:
