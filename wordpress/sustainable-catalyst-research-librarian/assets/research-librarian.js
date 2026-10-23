@@ -247,6 +247,12 @@
     });
   }
 
+  /**
+   * Pick a navigation route by fixed keyword weights; this is a heuristic,
+   * not scholarly retrieval, citation matching or evidence evaluation.
+   * @param {string} query Visitor text after UI collection.
+   * @returns {string} Route key, or an empty string when no rule matches.
+   */
   function scoreQuery(query) {
     const normalized = query.toLowerCase();
     const scores = {};

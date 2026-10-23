@@ -15,6 +15,12 @@ if (!defined('ABSPATH')) {
 define('SCRL_VERSION', '0.1.0');
 define('SCRL_PLUGIN_URL', plugin_dir_url(__FILE__));
 
+/**
+ * Registers a public navigation shortcode and its browser assets.
+ *
+ * This plugin recommends existing pages from a fixed route catalog. It does
+ * not authenticate a research user, retrieve papers or execute calculations.
+ */
 final class Sustainable_Catalyst_Research_Librarian {
     public function __construct() {
         add_shortcode('sustainable_catalyst_research_librarian', array($this, 'render_shortcode'));
@@ -38,6 +44,13 @@ final class Sustainable_Catalyst_Research_Librarian {
         );
     }
 
+    /**
+     * Render one escaped widget instance and enqueue its static assets.
+     *
+     * @param array $atts WordPress shortcode attributes; currently unused.
+     * @return string Captured HTML for the shortcode instance.
+     * Side effects: queues CSS/JS for the current page request.
+     */
     public function render_shortcode($atts = array()) {
         wp_enqueue_style('sustainable-catalyst-research-librarian');
         wp_enqueue_script('sustainable-catalyst-research-librarian');
